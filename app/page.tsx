@@ -11,8 +11,6 @@ import Coding from "./components/Coding";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import AboutMe from "./components/AboutMe";
-import DESKTOP from "../public/assets/desktop.png";
-import MOBILE from "../public/assets/mobile.png";
 
 export default function Home() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -27,7 +25,6 @@ export default function Home() {
             src={logo}
             alt={"logotype nav"}
             width={150}
-            className="ml-24"
           />
         </div>
 

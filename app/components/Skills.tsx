@@ -46,14 +46,14 @@ const Skills = () => {
             <Image src={gear} alt={"javascript"} />
             <h5>Back-end</h5>
             </div>
-            <div id="ICONES" className="flex gap-3 justify-center flex-wrap w-full">
+            <div id="ICONES" className="flex gap-3 justify-center items-center flex-wrap w-full">
               <Image src={NODE} alt={"NODE"} width={35} />
               <Image src={NEXT} alt={"NEXT"} width={35} />
               <Image src={POSTGRE} alt={"POSTGRE"} width={30} />
               <Image src={DOCKER} alt={"DOCKER"} width={30} />
               <Image src={SQL} alt={"SQL"} width={30} />
-              <Image src={JEST} alt={"JEST"} width={50} />
-              <Image src={GIT} alt={"GIT"} width={65} />
+              <Image src={JEST} alt={"JEST"} width={35} />
+              <Image src={GIT} alt={"GIT"} width={60} />
             </div>
           </div>
         </div>
