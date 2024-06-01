@@ -11,6 +11,7 @@ import SQL from "../../public/assets/icons-skills/back/SQL.png";
 import NODE from "../../public/assets/icons-skills/back/NODE.png";
 import NEXT from "../../public/assets/icons-skills/back/NEXT.png";
 import DOCKER from "../../public/assets/icons-skills/back/DOCKER.png";
+import JEST from "../../public/assets/icons-skills/back/JEST.png";
 import GIT from "../../public/assets/icons-skills/back/GIT.png";
 import iconpc from "../../public/assets/iconpc.png";
 import gear from "../../public/assets/gear.png";
@@ -51,11 +52,14 @@ const Skills = () => {
               <Image src={POSTGRE} alt={"POSTGRE"} width={30} />
               <Image src={DOCKER} alt={"DOCKER"} width={30} />
               <Image src={SQL} alt={"SQL"} width={30} />
+              <Image src={JEST} alt={"JEST"} width={50} />
               <Image src={GIT} alt={"GIT"} width={65} />
             </div>
           </div>
         </div>
       </div>
+
+      
       {/* DESKTOP */}
       <div className="hidden lg:flex flex-col text-white items-center gap-12">
         <div id="TITLE" className="flex-col text-center">
@@ -66,9 +70,9 @@ const Skills = () => {
           <div id="FRONT-END" className="flex flex-col gap-5 items-center w-full bg-boxes bg-opacity-50 py-7 px-16 border-stroke border-2 rounded-xl">
             <div id="TEXT E ICON" className="flex gap-3 items-center">
             <Image src={iconpc} alt={"javascript"} />
-            <h3>Front-end</h3>
+            <h4>Front-end</h4>
             </div>
-            <div id="ICONES" className="flex gap-3 w-full items-center">
+            <div id="ICONES" className="flex gap-3 w-full items-center ml-10">
               <Image src={javascript} alt={"javascript"} width={50} />
               <Image src={typescript} alt={"typescript"} width={50} />
               <Image src={react} alt={"react"} width={60} />
@@ -81,7 +85,7 @@ const Skills = () => {
           <div id="BACK-END" className="flex flex-col gap-5 items-center w-full bg-boxes bg-opacity-50 py-7 px-16 border-stroke border-2 rounded-xl">
             <div id="TEXT E ICON" className="flex gap-3 items-center">
             <Image src={gear} alt={"javascript"} />
-            <h3>Back-end</h3>
+            <h4>Back-end</h4>
             </div>
             <div id="ICONES" className="flex gap-3 w-full items-center ml-5">
               <Image src={NODE} alt={"NODE"} width={55} />
@@ -89,6 +93,7 @@ const Skills = () => {
               <Image src={POSTGRE} alt={"POSTGRE"} width={50} />
               <Image src={DOCKER} alt={"DOCKER"} width={50} />
               <Image src={SQL} alt={"SQL"} width={50} />
+              <Image src={JEST} alt={"JEST"} width={50} />
               <Image src={GIT} alt={"GIT"} width={80} />
             </div>
           </div>

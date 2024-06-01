@@ -83,7 +83,7 @@ const AboutMe = () => {
           py-4"
             >
               <Image src={certificate} alt={"experiencia"} width={24} />
-              <h3>Experiência</h3>
+              <h4>Experiência</h4>
               <p className="text-details">3+ Anos</p>
             </div>
             <div
@@ -92,7 +92,7 @@ const AboutMe = () => {
           py-4"
             >
               <Image src={projects} alt={"projetos"} width={22} />
-              <h3>Projetos</h3>
+              <h4>Projetos</h4>
               <p className="text-details">15+ Entregas</p>
             </div>
             <div
@@ -100,7 +100,7 @@ const AboutMe = () => {
               className="flex flex-col gap-2 items-center w-full border-stroke border-2 rounded-xl bg-boxes bg-opacity-30 py-4"
             >
               <Image src={icon} alt={"naosei"} width={24} />
-              <h3>Nao sei</h3>
+              <h4>Nao sei</h4>
               <p className="text-details">Nao sei</p>
             </div>
           </div>

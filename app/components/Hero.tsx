@@ -52,7 +52,7 @@ const Hero = () => {
             href="#"
             className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
-            <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
+            <span className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
               Baixar CV
             </span>
           </a>
@@ -90,7 +90,7 @@ const Hero = () => {
 
       {/* DESKTOP */}
 
-      <div className="hidden w-full lg:flex justify-between items-center px-60 py-8">
+      <div className="hidden w-full lg:flex items-center px-60 py-8">
         <div id="CONTAINER LEFT" className="flex gap-14 items-center">
         <div id="SOCIALS" className="flex flex-col gap-8 items-center">
           <div id="linkedin">
@@ -148,10 +148,7 @@ const Hero = () => {
               </span>
             </h2>
           </div>
-          <div
-            id="BUTTONS"
-            className="w-[22vw] h-[5vh] flex items-center font-poppins text-white gap-3"
-          >
+          <div id="BUTTONS" className="w-[22vw] h-[5vh] flex items-center font-poppins text-white gap-3">
             <button className="px-6 py-3 inline-block w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105 mt-3">
               Me contrate
             </button>
@@ -159,7 +156,7 @@ const Hero = () => {
               href="#"
               className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
             >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
+              <span className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
                 Baixar CV
               </span>
             </a>
@@ -168,7 +165,7 @@ const Hero = () => {
         </div>
         <div id="CONTAINER RIGHT">
           <div id="PHOTO">
-            <Image src={photo2} alt={"photo"} width={400} className="mr-10" />
+            <Image src={photo2} alt={"photo"} width={400} className="ml-[200px]" />
           </div>
         </div>
       </div>
