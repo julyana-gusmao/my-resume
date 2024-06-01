@@ -90,7 +90,7 @@ const Hero = () => {
 
       {/* DESKTOP */}
 
-      <div className="hidden w-full lg:flex items-center px-60 py-8">
+      <div className="hidden w-full lg:flex justify-between items-center px-40 py-8">
         <div id="CONTAINER LEFT" className="flex gap-14 items-center">
         <div id="SOCIALS" className="flex flex-col gap-8 items-center">
           <div id="linkedin">
@@ -165,7 +165,7 @@ const Hero = () => {
         </div>
         <div id="CONTAINER RIGHT">
           <div id="PHOTO">
-            <Image src={photo2} alt={"photo"} width={400} className="ml-[200px]" />
+            <Image src={photo2} alt={"photo"} width={400}/>
           </div>
         </div>
       </div>
