@@ -1,16 +1,16 @@
 "use client";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../public/assets/kira-devs.png";
-import usFlag from "../public/assets/us-flag.png";
+import { useState } from "react";
 import brFlag from "../public/assets/br-flag.png";
 import hamburger from "../public/assets/hamburguer-linear.png";
-import Hero from "./components/Hero";
+import logo from "../public/assets/kira-devs.png";
+import usFlag from "../public/assets/us-flag.png";
+import AboutMe from "./components/AboutMe";
 import Coding from "./components/Coding";
 import Contact from "./components/Contact";
+import Hero from "./components/Hero";
 import Skills from "./components/Skills";
-import AboutMe from "./components/AboutMe";
 
 export default function Home() {
   const [navbarOpen, setNavbarOpen] = useState(false);

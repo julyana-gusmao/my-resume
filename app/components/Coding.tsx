@@ -35,8 +35,21 @@ const Coding = () => {
           </div>
 
           <div id="PROJETOS" className="flex flex-col gap-5 h-full w-full items-center">
-          <div className="personal flex flex-col justify-center text-left w-[75vw] h-[70vh] p-4 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[40vh] bg-white rounded-2xl">
+          <div className="personal flex flex-col justify-center text-left w-[75vw] p-4 rounded-xl border-stroke border-2 border-opacity-50">
+            <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
+              {" "}
+            </div>
+            <div id="TEXT" className="flex flex-col gap-2 p-3">
+              <h5 className="font-bold">Title</h5>
+              <p className="text-details ">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+                nam debitis dignissimos nostrum laborum excepturi commodi nemo,
+                similique corrupti esse nisi
+              </p>
+            </div>
+          </div>
+          <div className="personal flex flex-col justify-center text-left w-[75vw] p-4 rounded-xl border-stroke border-2 border-opacity-50">
+            <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
               {" "}
             </div>
             <div id="TEXT" className="flex flex-col gap-2 p-3">
@@ -49,22 +62,8 @@ const Coding = () => {
               </p>
             </div>
           </div>
-          <div className="personal flex flex-col justify-center text-left w-[75vw] h-[70vh] p-4 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[40vh] bg-white rounded-2xl">
-              {" "}
-            </div>
-            <div id="TEXT" className="flex flex-col gap-2 p-3">
-              <h5 className="font-bold">Title</h5>
-              <p className="text-details ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                nam debitis dignissimos nostrum laborum excepturi commodi nemo,
-                similique corrupti esse nisi, cumque quas, sint quam ad!
-                Quisquam amet natus error!
-              </p>
-            </div>
-          </div>
-          <div className="personal flex flex-col justify-center text-left w-[75vw] h-[70vh] p-4 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[40vh] bg-white rounded-2xl">
+          <div className="personal flex flex-col justify-center text-left w-[75vw] p-4 rounded-xl border-stroke border-2 border-opacity-50">
+            <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
               {" "}
             </div>
             <div id="TEXT" className="flex flex-col gap-2 p-3">

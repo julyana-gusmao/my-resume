@@ -29,36 +29,41 @@
 h2{
   font-family: 'Poppins';
   font-size: 36px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 .head-mobile {
   font-family: 'Poppins';
   font-size: 30px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 h3{
   font-family: 'Poppins';
   font-size: 24px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 h4{
   font-family: 'Poppins';
   font-size: 20px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 h5{
   font-family: 'Poppins';
   font-size: 16px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 p{
   font-family: 'Poppins';
-  font-size: 15px
+  font-size: 15px;
+}
+
+label{
+  font-family: 'Poppins';
+  font-size: 13px;
 }
 
 html {
