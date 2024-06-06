@@ -45,9 +45,11 @@ const Hero = () => {
           id="BUTTONS"
           className="w-[70vw] flex flex-col items-center font-poppins text-white"
         >
-          <button className="px-6 inline-block py-3 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105">
-            Me contrate
-          </button>
+<a href="#contact" className="px-6 py-2 inline-block w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105 mt-3">
+            <span className="block rounded-full cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
+                Me contatar
+              </span>
+            </a>
           <a
             href="#"
             className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
@@ -149,9 +151,11 @@ const Hero = () => {
             </h2>
           </div>
           <div id="BUTTONS" className="w-[22vw] h-[5vh] flex items-center font-poppins text-white gap-3">
-            <button className="px-6 py-3 inline-block w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105 mt-3">
-              Me contrate
-            </button>
+            <a href="#contact" className="px-6 py-3 inline-block w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105 mt-3">
+            <span className="block rounded-full cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
+                Me contatar
+              </span>
+            </a>
             <a
               href="#"
               className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
