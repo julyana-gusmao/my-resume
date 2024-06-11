@@ -9,10 +9,10 @@ import Skills from "./components/Skills";
 export default function Home() {
   return (
     <>
-      <nav className="bg-sub-color flex h-[10vh] w-full fixed z-10 lg:px-32 px-8 py-2 items-center justify-between">
+      <nav className="bg-sub-color shadow-md shadow-gray-950 flex h-[10vh] w-full fixed z-10 lg:px-32 px-8 py-2 items-center justify-between">
         <Header />
       </nav>
-      <main className="pt-24">
+      <main className="pt-24 w-full">
         <Hero />
         <AboutMe />
         <Skills />
