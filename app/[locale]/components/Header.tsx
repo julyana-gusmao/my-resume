@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import brFlag from "../../public/assets/br-flag.png";
-import hamburger from "../../public/assets/hamburguer-linear.png";
-import close from "../../public/assets/close-button.png";
-import logo from "../../public/assets/kira-devs.png";
-import usFlag from "../../public/assets/us-flag.png";
+import brFlag from "../../../public/assets/br-flag.png";
+import hamburger from "../../../public/assets/hamburguer-linear.png";
+import close from "../../../public/assets/close-button.png";
+import logo from "../../../public/assets/kira-devs.png";
+import usFlag from "../../../public/assets/us-flag.png";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations('header');
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
@@ -37,19 +39,19 @@ const Header = () => {
             href={"#aboutMe"}
             className="hover:text-white cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
-            Sobre Mim
+            {t("aboutMe")}
           </Link>
           <Link
             href={"#coding"}
             className="hover:text-white cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
-            Projetos
+            {t("projects")}
           </Link>
           <Link
             href={"#contact"}
             className="text-white cursor-pointer bg-gradient-to-br from-linear-l to-linear-r px-6 py-2 inline-block border-none rounded-full transition-all duration-100 ease-in transform hover:scale-105"
           >
-            Contato
+            {t("contact")}
           </Link>
         </div>
       </div>
@@ -58,33 +60,33 @@ const Header = () => {
       <div
         className={`lg:hidden shadow-md shadow-gray-900 bg-opacity-95 fixed top-[9vh] left-0 w-full h-[30vh] bg-sub-color z-20 navbar-transition ${
           navbarOpen ? "navbar-open" : "navbar-closed"
-        }`} style={{ backdropFilter: navbarOpen ? "blur(5px)" : "none" }} 
+        }`}
+        style={{ backdropFilter: navbarOpen ? "blur(5px)" : "none" }}
       >
         <div className="flex flex-col items-center gap-9 mt-5 text-white font-poppins text-xl">
-
-        <div className="flex gap-4 items-center ">
-          <span className="text-base text-details">Idioma:</span>
-          <Image src={brFlag} alt={"brFlag"} />
-          <Image src={usFlag} alt={"usFlag"} />
-        </div>
+          <div className="flex gap-4 items-center ">
+            <span className="text-base text-details">Idioma:</span>
+            <Image src={brFlag} alt={"brFlag"} />
+            <Image src={usFlag} alt={"usFlag"} />
+          </div>
 
           <Link
             href={"#aboutMe"}
             className="hover:text-gray-400 cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
-            Sobre Mim
+            {t("aboutMe")}
           </Link>
           <Link
             href={"#coding"}
             className="hover:text-gray-400 cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
-            Projetos
+            {t("projects")}
           </Link>
           <Link
             href={"#contact"}
             className="hover:text-gray-400 cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
-            Contato
+            {t("contact")}
           </Link>
         </div>
       </div>

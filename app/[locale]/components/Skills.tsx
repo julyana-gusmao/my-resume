@@ -1,29 +1,32 @@
 import Image from "next/image";
-import javascript from "../../public/assets/icons-skills/front/javascript.png";
-import typescript from "../../public/assets/icons-skills/front/typescript.png";
-import react from "../../public/assets/icons-skills/front/react.png";
-import html from "../../public/assets/icons-skills/front/html.png";
-import figma from "../../public/assets/icons-skills/front/figma.png";
-import photoshop from "../../public/assets/icons-skills/front/photoshop.png";
-import tailwind from "../../public/assets/icons-skills/front/tailwind.png";
-import POSTGRE from "../../public/assets/icons-skills/back/POSTGRE.png";
-import SQL from "../../public/assets/icons-skills/back/SQL.png";
-import NODE from "../../public/assets/icons-skills/back/NODE.png";
-import NEXT from "../../public/assets/icons-skills/back/NEXT.png";
-import DOCKER from "../../public/assets/icons-skills/back/DOCKER.png";
-import JEST from "../../public/assets/icons-skills/back/JEST.png";
-import GIT from "../../public/assets/icons-skills/back/GIT.png";
-import iconpc from "../../public/assets/iconpc.png";
-import gear from "../../public/assets/gear.png";
+import javascript from "../../../public/assets/icons-skills/front/javascript.png";
+import typescript from "../../../public/assets/icons-skills/front/typescript.png";
+import react from "../../../public/assets/icons-skills/front/react.png";
+import html from "../../../public/assets/icons-skills/front/html.png";
+import figma from "../../../public/assets/icons-skills/front/figma.png";
+import photoshop from "../../../public/assets/icons-skills/front/photoshop.png";
+import tailwind from "../../../public/assets/icons-skills/front/tailwind.png";
+import POSTGRE from "../../../public/assets/icons-skills/back/POSTGRE.png";
+import SQL from "../../../public/assets/icons-skills/back/SQL.png";
+import NODE from "../../../public/assets/icons-skills/back/NODE.png";
+import NEXT from "../../../public/assets/icons-skills/back/NEXT.png";
+import DOCKER from "../../../public/assets/icons-skills/back/DOCKER.png";
+import JEST from "../../../public/assets/icons-skills/back/JEST.png";
+import GIT from "../../../public/assets/icons-skills/back/GIT.png";
+import iconpc from "../../../public/assets/iconpc.png";
+import gear from "../../../public/assets/gear.png";
+import { useTranslations } from "next-intl";
 
 const Skills = () => {
+  const t = useTranslations('skills');
+  
   return (
     <section id="skills" className="w-full py-8">
       {/* MOBILE */}
       <div className="lg:hidden flex flex-col gap-5 items-center text-white">
       <div id="TITLE" className="flex-col text-center">
           <h3 className="head-mobile">Skills</h3>
-          <h4 className="text-details">Meus conhecimentos técnicos</h4>
+          <h4 className="text-details">{t('technical-knowledge')}</h4>
         </div>
         <div id="BOXES" className="flex flex-col gap-6 items-center">
           <div id="FRONT-END" className="flex flex-col gap-5 items-center w-[70vw] bg-boxes bg-opacity-50 py-7 px-12 border-stroke border-2 rounded-xl">
@@ -64,7 +67,7 @@ const Skills = () => {
       <div className="hidden lg:flex flex-col text-white items-center gap-12">
         <div id="TITLE" className="flex-col text-center">
           <h2>Skills</h2>
-          <h4 className="text-details">Meus conhecimentos técnicos</h4>
+          <h4 className="text-details">{t('technical-knowledge')}</h4>
         </div>
         <div id="BOXES" className="flex flex-col gap-6">
           <div id="FRONT-END" className="flex flex-col gap-5 items-center w-full bg-boxes bg-opacity-50 py-7 px-16 border-stroke border-2 rounded-xl">

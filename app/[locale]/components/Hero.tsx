@@ -1,23 +1,30 @@
 import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
 import Link from "next/link";
-import photo from "../../public/assets/photo.png";
-import photo2 from "../../public/assets/photo2.png";
-import linkedin from "../../public/assets/linkedin.png";
-import github from "../../public/assets/github.png";
-import instagram from "../../public/assets/instagram.png";
-import PC from "../../public/assets/PC.png";
+import photo from "../../../public/assets/photo.png";
+import photo2 from "../../../public/assets/photo2.png";
+import linkedin from "../../../public/assets/linkedin.png";
+import github from "../../../public/assets/github.png";
+import instagram from "../../../public/assets/instagram.png";
+import PC from "../../../public/assets/PC.png";
+import { useTranslations } from "next-intl";
+
+//TODO: tentar traduzir as roles do typewritter com o gpt4
+//TODO: Adicionar a opção de mudar de idioma no botão lá no header
+
 
 const Hero = () => {
+  const t = useTranslations('hero');
+
   return (
     <section id="hero" className="w-full py-8">
       {/* MOBILE */}
       <div className="lg:hidden w-full px-8 flex flex-col items-center gap-10 whitespace-break-spaces break-words text-center">
         <div id="TITLE" className="flex flex-col items-center gap-2">
           <h1 className="text-transparent text-[40px] font-bold bg-clip-text bg-gradient-to-r from-linear-l to-linear-r leading-10">
-            Olá,
+            {t('hello')},
             <br />
-            Eu sou a Kira
+            {t('apresentation')}
           </h1>
           <h2 className="text-white text-xl font-poppins">
             {" "}
@@ -47,7 +54,7 @@ const Hero = () => {
         >
 <a href="#contact" className="px-6 py-2 inline-block w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105 mt-3">
             <span className="block rounded-full cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
-                Me contatar
+                {t('contact-me')}
               </span>
             </a>
           <a
@@ -55,7 +62,7 @@ const Hero = () => {
             className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
             <span className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
-              Baixar CV
+              {t('download-cv')}
             </span>
           </a>
         </div>
@@ -124,9 +131,9 @@ const Hero = () => {
           <div id="TITLE" className="flex flex-col items-left gap-5">
             <Image src={PC} alt={"photo"} width={80} />
             <h1 className="text-transparent text-5xl font-bold bg-clip-text bg-gradient-to-r from-linear-l to-linear-r">
-              Olá,
+              {t('hello')},
               <br />
-              Eu sou a Kira
+              {t('apresentation')}
             </h1>
             <h2 className="text-white text-4xl font-poppins">
               {" "}
@@ -150,10 +157,10 @@ const Hero = () => {
               </span>
             </h2>
           </div>
-          <div id="BUTTONS" className="w-[22vw] h-[5vh] flex items-center font-poppins text-white gap-3">
+          <div id="BUTTONS" className="w-[30vw] h-[5vh] flex items-center font-poppins text-white gap-3">
             <a href="#contact" className="px-6 py-3 inline-block w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105 mt-3">
             <span className="block rounded-full cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
-                Me contatar
+                {t('contact-me')}
               </span>
             </a>
             <a
@@ -161,7 +168,7 @@ const Hero = () => {
               className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
             >
               <span className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
-                Baixar CV
+                {t('download-cv')}
               </span>
             </a>
           </div>

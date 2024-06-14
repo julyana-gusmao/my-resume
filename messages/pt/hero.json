@@ -1,0 +1,17 @@
+{
+    "hello": "Olá",
+    "apresentation": "Eu sou a Kira",
+
+    "roles": [
+    "Desenvolvedora de Software",
+    "Desenvolvedora Web Full Stack",
+    "Web Designer",
+    "Produtora de Branding",
+    "Empreendedora",
+    "Universitária",
+    "Mãe de Gato"
+  ],
+
+  "contact-me": "Me contatar",
+  "download-cv": "Baixar CV"
+}
