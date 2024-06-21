@@ -1,19 +1,19 @@
+import close from "@/close-button.png";
+import hamburger from "@/hamburguer-linear.png";
+import logo from "@/kira-devs.png";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import brFlag from "../../../public/assets/br-flag.png";
-import hamburger from "../../../public/assets/hamburguer-linear.png";
-import close from "../../../public/assets/close-button.png";
-import logo from "../../../public/assets/kira-devs.png";
-import usFlag from "../../../public/assets/us-flag.png";
-import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
-  const t = useTranslations('header');
+  const t = useTranslations("header");
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <>
+      {/* MOBILE */}
       <div id="container-logo">
         <Image src={logo} alt={"logotype nav"} width={150} />
       </div>
@@ -34,6 +34,7 @@ const Header = () => {
         </div>
 
         {/* DESKTOP */}
+        <div><LanguageSwitcher/></div>
         <div className="hidden lg:flex items-center gap-8 text-lg text-gray-400">
           <Link
             href={"#aboutMe"}
@@ -65,9 +66,8 @@ const Header = () => {
       >
         <div className="flex flex-col items-center gap-9 mt-5 text-white font-poppins text-xl">
           <div className="flex gap-4 items-center ">
-            <span className="text-base text-details">Idioma:</span>
-            <Image src={brFlag} alt={"brFlag"} />
-            <Image src={usFlag} alt={"usFlag"} />
+            <span className="text-base text-details">{t("language")}:</span>
+            <LanguageSwitcher/>
           </div>
 
           <Link
