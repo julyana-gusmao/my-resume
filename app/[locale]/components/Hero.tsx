@@ -8,13 +8,38 @@ import github from "../../../public/assets/github.png";
 import instagram from "../../../public/assets/instagram.png";
 import PC from "../../../public/assets/PC.png";
 import { useTranslations } from "next-intl";
-
-//TODO: tentar traduzir as roles do typewritter com o gpt4
-//TODO: Adicionar a opção de mudar de idioma no botão lá no header
-
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const t = useTranslations('hero');
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || 'pt';
+  const [words, setWords] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (locale === 'en') {
+      setWords([
+        "Software Developer",
+        "Full Stack Web Developer",
+        "Web Designer",
+        "Branding Producer",
+        "CEO",
+        "University Student",
+        "Cat Mom",
+      ]);
+    } else {
+      setWords([
+        "Desenvolvedora de Software",
+        "Desenvolvedora Full Stack",
+        "Web Designer",
+        "Produtora de Branding",
+        "Empreendedora",
+        "Universitária",
+        "Mãe de Gato",
+      ]);
+    }
+  }, [locale]);
 
   return (
     <section id="hero" className="w-full py-8">
@@ -30,15 +55,7 @@ const Hero = () => {
             {" "}
             <span className="font-bold whitespace-nowrap">
               <Typewriter
-                words={[
-                  "Desenvolvedora de Software",
-                  "Desenvolvedora Web Full Stack",
-                  "Web Designer",
-                  "Produtora de Branding",
-                  "Empreendedora",
-                  "Universitária",
-                  "Mãe de Gato",
-                ]}
+                words={words}
                 loop={0}
                 cursor
                 typeSpeed={60}
@@ -138,16 +155,8 @@ const Hero = () => {
             <h2 className="text-white text-4xl font-poppins">
               {" "}
               <span className="font-bold whitespace-nowrap">
-                <Typewriter
-                  words={[
-                    "Desenvolvedora de Software",
-                    "Desenvolvedora Full Stack",
-                    "Web Designer",
-                    "Produtora de Branding",
-                    "Empreendedora",
-                    "Universitária",
-                    "Mãe de Gato",
-                  ]}
+                <Typewriter 
+                  words={words}
                   loop={0}
                   cursor
                   typeSpeed={60}

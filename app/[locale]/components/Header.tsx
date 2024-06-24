@@ -34,7 +34,9 @@ const Header = () => {
         </div>
 
         {/* DESKTOP */}
-        <div><LanguageSwitcher/></div>
+        <div className="hidden lg:block">
+          <LanguageSwitcher />
+        </div>
         <div className="hidden lg:flex items-center gap-8 text-lg text-gray-400">
           <Link
             href={"#aboutMe"}
@@ -67,7 +69,7 @@ const Header = () => {
         <div className="flex flex-col items-center gap-9 mt-5 text-white font-poppins text-xl">
           <div className="flex gap-4 items-center ">
             <span className="text-base text-details">{t("language")}:</span>
-            <LanguageSwitcher/>
+            <LanguageSwitcher />
           </div>
 
           <Link

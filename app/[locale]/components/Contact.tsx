@@ -18,24 +18,24 @@ const Contact = () => {
 
   function sendEmail(e: any) {
     e.preventDefault();
-
+  
     if (name === "" || email === "" || message === "") {
       alert("Preencha todos os campos");
       return;
     }
-
+  
     type TemplateParams = {
       from_name: string;
       message: string;
       email: string;
     };
-
+  
     const templateParams: TemplateParams = {
       from_name: name,
       message: message,
       email: email,
     };
-
+  
     emailjs
       .send(
         "service_80rsb5g",
@@ -47,7 +47,9 @@ const Contact = () => {
         (response) => {
           alert("Enviado com sucesso!");
           console.log("EMAIL ENVIADO!", response.status, response.text);
-          setName(""), setEmail(""), setMessage("");
+          setName("");
+          setEmail("");
+          setMessage("");
         },
         (err) => {
           console.log("ERRO: ", err);
@@ -132,6 +134,7 @@ const Contact = () => {
             <div className="flex flex-col gap-2 items-start">
               <label htmlFor="name">{t("name")}</label>
               <input
+                key="name-input"
                 placeholder={t("input-name")}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full bg-transparent border-2 border-stroke rounded-xl p-3 placeholder-details"
@@ -140,6 +143,7 @@ const Contact = () => {
             <div className="flex flex-col gap-2 items-start">
               <label htmlFor="email">Email</label>
               <input
+                key="email-input"
                 placeholder={t("input-email")}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-transparent border-2 border-stroke rounded-xl p-3 placeholder-details"
@@ -148,6 +152,7 @@ const Contact = () => {
             <div className="flex flex-col gap-2 items-start">
               <label htmlFor="message">{t("message")}</label>
               <textarea
+                key="message-input"
                 onChange={(e) => setMessage(e.target.value)}
                 className="w-full bg-transparent border-2 border-stroke rounded-xl p-3 h-[15vh] placeholder-details text-start align-text-top"
               ></textarea>
@@ -234,10 +239,14 @@ const Contact = () => {
           </div>
           <div id="FORM" className="flex flex-col gap-3">
             <h4>{t("write-project")}</h4>
-            <form className="text-details flex flex-col gap-6 w-[28vw]">
+            <form
+              onSubmit={sendEmail}
+              className="text-details flex flex-col gap-6 w-[28vw]"
+            >
               <div className="flex flex-col gap-2 items-start">
                 <label htmlFor="name">{t("name")}</label>
                 <input
+                  key="name-input"
                   placeholder={t("input-name")}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full bg-transparent border-2 border-stroke rounded-xl p-4 placeholder-details"
@@ -246,6 +255,7 @@ const Contact = () => {
               <div className="flex flex-col gap-2 items-start">
                 <label htmlFor="email">Email</label>
                 <input
+                  key="email-input"
                   placeholder={t("input-email")}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-transparent border-2 border-stroke rounded-xl p-4 placeholder-details"
@@ -254,13 +264,15 @@ const Contact = () => {
               <div className="flex flex-col gap-2 items-start">
                 <label htmlFor="message">{t("message")}</label>
                 <textarea
+                  key="message-input"
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-full bg-transparent border-2 border-stroke rounded-xl p-4 h-[26vh] placeholder-details text-start align-text-top"
                 ></textarea>
               </div>
               <button
-              type="submit"
-              className="mt-2 flex gap-3 p-5 items-center justify-center w-[14vw] bg-gradient-to-tr from-linear-l to-linear-r rounded-xl text-white">
+                type="submit"
+                className="mt-2 flex gap-3 p-5 items-center justify-center w-[14vw] bg-gradient-to-tr from-linear-l to-linear-r rounded-xl text-white"
+              >
                 <p>{t("message-button")}</p>
                 <Image src={send} alt={"send button"} />
               </button>

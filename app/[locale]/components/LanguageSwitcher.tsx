@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 
 //TODO: Mudar imagem da linguagem
-//TODO: Colocar para que não renderize novamente ao clicar na navbar
 
 const LanguageSwitcher: React.FC = () => {
   const router = useRouter();
