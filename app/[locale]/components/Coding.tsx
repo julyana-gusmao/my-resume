@@ -27,31 +27,31 @@ const Coding = () => {
           className="flex gap-10 w-[80vw] mb-2 justify-center items-center"
         >
           <div
-          onClick={() => handleFilterChange("all")}
+            onClick={() => handleFilterChange("all")}
           >
             <span
               id="TODOS"
-              className="block rounded-full  py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
+              className={`block ${filter === "all" ? "text-purple-300" : ""} rounded-full py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100`}
             >
               <p>{t('all')}</p>
             </span>
           </div>
           <div
-          onClick={() => handleFilterChange("personal")}
+            onClick={() => handleFilterChange("personal")}
           >
             <span
               id="PERSONAL"
-              className="block rounded-full  py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
+              className={`block ${filter === "personal" ? "text-purple-300" : ""} rounded-full py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100`}
             >
               <p>{t('personal')}</p>
             </span>
           </div>
           <div
-           onClick={() => handleFilterChange("professional")}
-           >
+            onClick={() => handleFilterChange("professional")}
+          >
             <span
               id="PROFESSIONAL"
-              className="block rounded-full  py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
+              className={`block ${filter === "professional" ? "text-purple-300" : ""} rounded-full py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100`}
             >
               <p>{t('professional')}</p>
             </span>
@@ -86,7 +86,7 @@ const Coding = () => {
           <h3 className="font-sans text-[30px]">&lt;coding&gt;</h3>
           <h4 className="text-details ">Featured projects</h4>
         </div>
-        {/* TRANSFORMAR DEPOIS EM COMPONENTE COM PROPS?? */}
+
         <div
           id="FILTROS"
           className="flex gap-2 w-[35vw] ml-3 mb-2 justify-center"
@@ -98,7 +98,7 @@ const Coding = () => {
           >
             <span
               id="TODOS"
-              className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
+              className={`block ${filter === "all" ? "bg-transparent" : "bg-main-color"} hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100`}
             >
               <p>{t('all')}</p>
             </span>
@@ -110,7 +110,7 @@ const Coding = () => {
           >
             <span
               id="PERSONAL"
-              className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
+              className={`block ${filter === "personal" ? "bg-transparent" : "bg-main-color"} hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100`}
             >
               <p>{t('personal')}</p>
             </span>
@@ -122,7 +122,7 @@ const Coding = () => {
           >
             <span
               id="PROFESSIONAL"
-              className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
+              className={`block ${filter === "professional" ? "bg-transparent" : "bg-main-color"} hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100`}
             >
               <p>{t('professional')}</p>
             </span>

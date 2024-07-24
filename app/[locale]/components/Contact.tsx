@@ -215,7 +215,7 @@ const Contact = () => {
             {!showSuccessMessage && (
               <button
                 type="submit"
-                className="mt-2 flex gap-3 p-5 items-center justify-center w-[14vw] bg-gradient-to-tr from-linear-l to-linear-r rounded-xl text-white"
+                className="mt-2 flex gap-3 p-5 items-center justify-center w-full bg-gradient-to-tr from-linear-l to-linear-r rounded-xl text-white"
               >
                 <p>{t("message-button")}</p>
                 <Image src={send} alt={"send button"} />
