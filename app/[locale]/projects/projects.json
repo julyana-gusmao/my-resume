@@ -1,28 +1,55 @@
 [
     {
         "id": "1",
-        "title": "Asdsads",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nam debitis dignissimos nostrum laborum excepturi commodi nemo, similique corrupti esse nisi, cumque quas, sint quam ad! Quisquam amet natus error!",
-        "src": "asdsadsa",
-        "type": "personal"
+        "translations": {
+            "en": {
+                "title": "Site - Syno Digital Company",
+                "description": "Website for the company I am part of. It was a great pleasure for me to be responsible for the creation of the company's website. Made with <b>React, it has mobile responsiveness and animations!</b>",
+                "sub-description": "Created with React JS, customized with TailwindCSS and animated with Framer Motion.</em> It has settings like smooth scroll, and it's possible to send a contact form without an API. Use of various libraries to improve user experience."
+            },
+            "pt": {
+                "title": "Site - Syno Companhia Digital",
+                "description": "Website para a empresa que faço parte. Para mim, foi um grande prazer ser responsável pela criação do website da empresa. Foi feito com <b>React, tem responsividade mobile e animações!</b>",
+                "sub-description": "<em>Criado com React JS, personalizado com TailwindCSS e animado com Framer Motion.</em> Possui configurações como scroll smooth, e é possível enviar um formulário de contato sem precisar de API. Uso de várias bibliotecas para melhorar a experiência do usuário."
+            }
+        },
+        "url": "https://site-syno.vercel.app",
+        "src": "/videos/syno.mp4",
+        "image": "/assets/thumbs/syno-thumb.png",
+        "type": "professional",
+        "tags": "#front-end #responsivo #react #tailwind #framermotion"
     },
-    
     {
         "id": "2",
-        "title": "Planner",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nam debitis dignissimos nostrum laborum excepturi commodi nemo, similique corrupti esse nisi, cumque quas, sint quam ad! Quisquam amet natus error!",
+        "translations": {
+            "en": {
+                "title": "Plann.er",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nam debitis dignissimos nostrum laborum excepturi commodi nemo, similique corrupti esse nisi, cumque quas, sint quam ad! Quisquam amet natus error!"
+            },
+            "pt": {
+                "title": "Plann.er",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nam debitis dignissimos nostrum laborum excepturi commodi nemo, similique corrupti esse nisi, cumque quas, sint quam ad! Quisquam amet natus error!"
+            }
+        },
         "src": "dasdsadsdas",
-        "url": "https://example.com/asdsadsa",
+        "image": "/assets/thumbs/syno-thumb.png",
         "type": "professional"
     },
-
     {
         "id": "3",
-        "title": "ToDoList",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nam debitis dignissimos nostrum laborum excepturi commodi nemo, similique corrupti esse nisi, cumque quas, sint quam ad! Quisquam amet natus error!",
+        "translations": {
+            "en": {
+                "title": "To Do List",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nam debitis dignissimos nostrum laborum excepturi commodi nemo, similique corrupti esse nisi, cumque quas, sint quam ad! Quisquam amet natus error!"
+            },
+            "pt": {
+                "title": "To Do List",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nam debitis dignissimos nostrum laborum excepturi commodi nemo, similique corrupti esse nisi, cumque quas, sint quam ad! Quisquam amet natus error!"
+            }
+        },
         "src": "dasdsadsdas",
+        "image": "/assets/thumbs/syno-thumb.png",
         "url": "https://example.com/asdsadsa",
         "type": "personal"
     }
-
 ]
