@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "framer-motion": "^11.3.17",
     "i18next": "^23.11.5",
     "next": "14.2.3",
     "next-i18next": "^15.3.0",

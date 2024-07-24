@@ -61,7 +61,7 @@ const Header = () => {
 
       {/* MOBILE NAVBAR */}
       <div
-        className={`lg:hidden shadow-md shadow-gray-900 bg-opacity-95 fixed top-[9vh] left-0 w-full h-[30vh] bg-sub-color z-20 navbar-transition ${
+        className={`lg:hidden shadow-md shadow-gray-900 bg-opacity-95 fixed top-[9vh] left-0 w-full h-[40vh] bg-sub-color z-20 navbar-transition ${
           navbarOpen ? "navbar-open" : "navbar-closed"
         }`}
         style={{ backdropFilter: navbarOpen ? "blur(5px)" : "none" }}

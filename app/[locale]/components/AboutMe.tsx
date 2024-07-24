@@ -1,9 +1,8 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import photo from "../../../public/assets/about-image.png";
 import certificate from "../../../public/assets/certificate.png";
-import icon from "../../../public/assets/icon.png";
 import projects from "../../../public/assets/done.png";
-import { useTranslations } from "next-intl";
 
 const AboutMe = () => {
   const t = useTranslations('about');
@@ -17,7 +16,7 @@ const AboutMe = () => {
         <div id="CONTAINER RIGHT" className="flex flex-col items-center gap-7">
           <div id="TEXT" className="flex flex-col gap-3 font-poppins items-center">
             <h2 className="font-semibold head-mobile">{t('AboutMe')}</h2>
-            <p className="text-base text-center font-regular tracking-normal leading-7 w-[80vw]">
+            <p className="text-base text-center font-regular tracking-normal leading-7 w-[90vw]">
               {t('text')}
             </p>
           </div>
@@ -35,13 +34,6 @@ const AboutMe = () => {
               <Image src={certificate} alt={"experiencia"} width={24} />
               <h5>{t('experience')}</h5>
               <p className="text-details text-sm">{t('time-experience')}</p>
-            </div>
-            <div id="BOX-ICON"
-              className="flex flex-col gap-2 items-center w-full border-stroke border-2 rounded-xl bg-boxes bg-opacity-20 py-2 px-2"
-            >
-              <Image src={icon} alt={"naosei"} width={24} />
-              <h5>{t('nao-sei')}</h5>
-              <p className="text-details text-sm">{t('nao-sei')}</p>
             </div>
           </div>
           <div id="BUTTONS" className="w-full h-[5vh] flex flex-col items-center font-poppins text-white gap-3">
@@ -98,14 +90,6 @@ const AboutMe = () => {
               <Image src={projects} alt={"projetos"} width={22} />
               <h5>{t('projects-done')}</h5>
               <p className="text-details text-sm">{t('projects-done-number')}</p>
-            </div>
-            <div
-              id="BOX-ICON"
-              className="flex flex-col gap-1 items-center justify-center w-full border-stroke border-2 rounded-xl bg-boxes bg-opacity-30 py-2"
-            >
-              <Image src={icon} alt={"naosei"} width={24} />
-              <h5>{t('nao-sei')}</h5>
-              <p className="text-details text-sm">{t('nao-sei')}</p>
             </div>
           </div>
           <div id="BUTTONS" className="w-full h-[5vh] flex items-center font-poppins text-white gap-3">

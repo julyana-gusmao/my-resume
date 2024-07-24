@@ -1,15 +1,14 @@
-import { Typewriter } from "react-simple-typewriter";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import photo from "../../../public/assets/photo.png";
-import photo2 from "../../../public/assets/photo2.png";
-import linkedin from "../../../public/assets/linkedin.png";
-import github from "../../../public/assets/github.png";
-import instagram from "../../../public/assets/instagram.png";
-import PC from "../../../public/assets/PC.png";
-import { useTranslations } from "next-intl";
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
+import { Typewriter } from "react-simple-typewriter";
+import github from "../../../public/assets/github.png";
+import instagram from "../../../public/assets/instagram.png";
+import linkedin from "../../../public/assets/linkedin.png";
+import PC from "../../../public/assets/PC.png";
+import photo2 from "../../../public/assets/photo2.png";
 
 const Hero = () => {
   const t = useTranslations('hero');
@@ -85,7 +84,7 @@ const Hero = () => {
         </div>
         <div id="SOCIALS" className="lg:hidden flex gap-8 items-center">
           <div id="linkedin">
-            <Link href="https://meulink.com.br">
+            <Link href="https://www.linkedin.com/in/julyana-gusmao/">
               <Image
                 src={linkedin}
                 alt="photo"
@@ -93,7 +92,7 @@ const Hero = () => {
             </Link>
           </div>
           <div id="github">
-            <Link href="https://meulink.com.br">
+            <Link href="https://github.com/julyana-gusmao">
               <Image
                 src={github}
                 alt="photo"
@@ -101,7 +100,7 @@ const Hero = () => {
             </Link>
           </div>
           <div id="insta">
-            <Link href="https://meulink.com.br">
+            <Link href="https://instagram.com/the2kira">
               <Image
                 src={instagram}
                 alt="photo"
@@ -120,7 +119,7 @@ const Hero = () => {
         <div id="CONTAINER LEFT" className="flex gap-14 items-center">
         <div id="SOCIALS" className="flex flex-col gap-8 items-center">
           <div id="linkedin">
-            <Link href="https://meulink.com.br">
+            <Link href="https://www.linkedin.com/in/julyana-gusmao/">
               <Image
                 src={linkedin}
                 alt="photo"
@@ -128,7 +127,7 @@ const Hero = () => {
             </Link>
           </div>
           <div id="github">
-            <Link href="https://meulink.com.br">
+            <Link href="https://github.com/julyana-gusmao">
               <Image
                 src={github}
                 alt="photo"
@@ -136,7 +135,7 @@ const Hero = () => {
             </Link>
           </div>
           <div id="insta">
-            <Link href="https://meulink.com.br">
+            <Link href="https://instagram.com/the2kira">
               <Image
                 src={instagram}
                 alt="photo"

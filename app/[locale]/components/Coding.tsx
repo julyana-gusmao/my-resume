@@ -1,7 +1,15 @@
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import projects from '../projects/projects.json';
 
 const Coding = () => {
   const t = useTranslations('coding');
+  const [filter, setFilter] = useState<'personal' | 'professional' | 'all'>("all");
+  const handleFilterChange = (type: 'personal' | 'professional' | 'all') => {
+    setFilter(type);
+  };
+
+  const filteredProjects = projects.filter(project => filter === "all" || project.type === filter);
 
   return (
     <section id="coding" className="text-white w-full">
@@ -16,20 +24,31 @@ const Coding = () => {
         {/* TRANSFORMAR EM LISTA HTML E ADICIONAR UM SELECT DEFAULT COM BG WHITE NO ALL? TRANSIÇÃO AO CLICAR PARA O PRÓXIMO */}
         <div
           id="FILTROS"
-          className="flex gap-10 w-[70vw] mb-2 justify-center items-center"
+          className="flex gap-10 w-[80vw] mb-2 justify-center items-center"
         >
+          <div
+          onClick={() => handleFilterChange("all")}
+          >
             <span
               id="TODOS"
               className="block rounded-full  py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
             >
               <p>{t('all')}</p>
             </span>
+          </div>
+          <div
+          onClick={() => handleFilterChange("personal")}
+          >
             <span
               id="PERSONAL"
               className="block rounded-full  py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
             >
               <p>{t('personal')}</p>
             </span>
+          </div>
+          <div
+           onClick={() => handleFilterChange("professional")}
+           >
             <span
               id="PROFESSIONAL"
               className="block rounded-full  py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100"
@@ -37,52 +56,25 @@ const Coding = () => {
               <p>{t('professional')}</p>
             </span>
           </div>
-
-          <div id="PROJETOS" className="flex flex-col gap-5 h-full w-full items-center">
-          <div className="personal flex flex-col justify-center text-left w-[75vw] p-4 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
-              {" "}
-            </div>
-            <div id="TEXT" className="flex flex-col gap-2 p-3">
-              <h5 className="font-bold">Title</h5>
-              <p className="text-details ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                nam debitis dignissimos nostrum laborum excepturi commodi nemo,
-                similique corrupti esse nisi
-              </p>
-            </div>
-          </div>
-          <div className="personal flex flex-col justify-center text-left w-[75vw] p-4 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
-              {" "}
-            </div>
-            <div id="TEXT" className="flex flex-col gap-2 p-3">
-              <h5 className="font-bold">Title</h5>
-              <p className="text-details ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                nam debitis dignissimos nostrum laborum excepturi commodi nemo,
-                similique corrupti esse nisi, cumque quas, sint quam ad!
-                Quisquam amet natus error!
-              </p>
-            </div>
-          </div>
-          <div className="personal flex flex-col justify-center text-left w-[75vw] p-4 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
-              {" "}
-            </div>
-            <div id="TEXT" className="flex flex-col gap-2 p-3">
-              <h5 className="font-bold">Title</h5>
-              <p className="text-details ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                nam debitis dignissimos nostrum laborum excepturi commodi nemo,
-                similique corrupti esse nisi, cumque quas, sint quam ad!
-                Quisquam amet natus error!
-              </p>
-            </div>
-          </div>
         </div>
 
-        
+        <div id="PROJETOS" className="flex flex-col gap-5 h-full w-full items-center">
+          {filteredProjects.map(project => (
+            <div key={project.id} className="personal flex flex-col justify-center text-left p-4 rounded-xl border-stroke border-2 border-opacity-50">
+              <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
+                {" "}
+              </div>
+              <div id="TEXT" className="flex flex-col gap-3 p-3">
+                <h5 className="font-bold">{project.title}</h5>
+                <p className="text-details ">
+                  {project.description}
+                </p>
+                <p className="text-xs">#{project.type}</p>
+                <p className="text-xs text-details">{project.url}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* DESKTOP */}
@@ -101,6 +93,7 @@ const Coding = () => {
         >
           <div
             id="TODOS"
+            onClick={() => handleFilterChange("all")}
             className="px-1 inline-block py-1 rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
             <span
@@ -112,6 +105,7 @@ const Coding = () => {
           </div>
           <div
             id="PERSONAL"
+            onClick={() => handleFilterChange("personal")}
             className="px-1 inline-block py-1 rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
             <span
@@ -123,6 +117,7 @@ const Coding = () => {
           </div>
           <div
             id="PROFESSIONAL"
+            onClick={() => handleFilterChange("professional")}
             className="px-1 inline-block py-1 rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
             <span
@@ -134,51 +129,21 @@ const Coding = () => {
           </div>
         </div>
 
-        {/* TRANSFORMAR DEPOIS EM JSON E FAZER UM MAP DOS PROJETOS? */}
-
-        <div id="PROJETOS" className="flex flex-wrap gap-5 h-full w-[80vw]">
-          <div className="personal flex flex-col justify-center text-left w-[25vw] p-2 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[256px] bg-white rounded-2xl">
-              {" "}
+        <div id="PROJETOS" className="flex flex-wrap gap-5 w-[80vw]">
+          {filteredProjects.map(project => (
+            <div key={project.id} className="personal flex flex-col justify-center text-left w-[32%] p-4 rounded-xl border-stroke border-2 border-opacity-50">
+              <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
+                {" "}
+              </div>
+              <div id="TEXT" className="flex flex-col gap-3 p-3">
+                <h5 className="font-bold">{project.title}</h5>
+                <p className="text-details ">
+                  {project.description}
+                </p>
+                <p className="text-xs">#{project.type}</p>
+              </div>
             </div>
-            <div id="TEXT" className="flex flex-col gap-2 p-3">
-              <h5 className="font-bold">Title</h5>
-              <p className="text-details ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                nam debitis dignissimos nostrum laborum excepturi commodi nemo,
-                similique corrupti esse nisi, cumque quas, sint quam ad!
-                Quisquam amet natus error!
-              </p>
-            </div>
-          </div>
-          <div className="personal flex flex-col justify-center text-left w-[25vw] p-2 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[256px] bg-white rounded-2xl">
-              {" "}
-            </div>
-            <div id="TEXT" className="flex flex-col gap-2 p-3">
-              <h5 className="font-bold">Title</h5>
-              <p className="text-details ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                nam debitis dignissimos nostrum laborum excepturi commodi nemo,
-                similique corrupti esse nisi, cumque quas, sint quam ad!
-                Quisquam amet natus error!
-              </p>
-            </div>
-          </div>
-          <div className="personal flex flex-col justify-center text-left w-[25vw] p-2 rounded-xl border-stroke border-2 border-opacity-50">
-            <div id="IMAGE" className="w-full h-[256px] bg-white rounded-2xl">
-              {" "}
-            </div>
-            <div id="TEXT" className="flex flex-col gap-2 p-3">
-              <h5 className="font-bold">Title</h5>
-              <p className="text-details ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                nam debitis dignissimos nostrum laborum excepturi commodi nemo,
-                similique corrupti esse nisi, cumque quas, sint quam ad!
-                Quisquam amet natus error!
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

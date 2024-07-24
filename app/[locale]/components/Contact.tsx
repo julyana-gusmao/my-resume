@@ -4,38 +4,48 @@ import instagram from "@/icons-contact/instagram.png";
 import linkedin from "@/icons-contact/linkedin.png";
 import send from "@/send.png";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useState } from "react";
-
-//TODO: Não está limpando os inputs após o envio.
+import { useEffect, useState } from "react";
 
 const Contact = () => {
   const t = useTranslations("contact");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [showError, setShowError] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  useEffect(() => {
+    if (showError) {
+      const timer = setTimeout(() => setShowError(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showError, setShowError]);
 
   function sendEmail(e: any) {
     e.preventDefault();
-  
+
     if (name === "" || email === "" || message === "") {
-      alert("Preencha todos os campos");
+      setShowError(true);
       return;
     }
-  
+
+    setShowError(false);
+
     type TemplateParams = {
       from_name: string;
       message: string;
       email: string;
     };
-  
+
     const templateParams: TemplateParams = {
       from_name: name,
       message: message,
       email: email,
     };
-  
+
     emailjs
       .send(
         "service_80rsb5g",
@@ -45,8 +55,7 @@ const Contact = () => {
       )
       .then(
         (response) => {
-          alert("Enviado com sucesso!");
-          console.log("EMAIL ENVIADO!", response.status, response.text);
+          setShowSuccessMessage(true)
           setName("");
           setEmail("");
           setMessage("");
@@ -55,6 +64,18 @@ const Contact = () => {
           console.log("ERRO: ", err);
         }
       );
+  }
+
+  const fadeInMessage = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
   }
 
   return (
@@ -135,6 +156,9 @@ const Contact = () => {
               <label htmlFor="name">{t("name")}</label>
               <input
                 key="name-input"
+                minLength={3}
+                maxLength={50}
+                value={name}
                 placeholder={t("input-name")}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full bg-transparent border-2 border-stroke rounded-xl p-3 placeholder-details"
@@ -144,6 +168,9 @@ const Contact = () => {
               <label htmlFor="email">Email</label>
               <input
                 key="email-input"
+                value={email}
+                minLength={5}
+                maxLength={50}
                 placeholder={t("input-email")}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-transparent border-2 border-stroke rounded-xl p-3 placeholder-details"
@@ -153,17 +180,47 @@ const Contact = () => {
               <label htmlFor="message">{t("message")}</label>
               <textarea
                 key="message-input"
+                value={message}
+                minLength={10}
+                maxLength={240}
                 onChange={(e) => setMessage(e.target.value)}
                 className="w-full bg-transparent border-2 border-stroke rounded-xl p-3 h-[15vh] placeholder-details text-start align-text-top"
               ></textarea>
             </div>
-            <button
-              type="submit"
-              className="mt-2 flex gap-3 p-5 items-center justify-center w-[45vw] bg-gradient-to-tr from-linear-l to-linear-r rounded-xl text-white"
-            >
-              <p>{t("message-button")}</p>
-              <Image src={send} alt={"send button"} />
-            </button>
+            {showError && (
+              <motion.div
+                variants={fadeInMessage}
+                initial="initial"
+                whileInView="animate"
+                viewport={{
+                  once: true,
+                }}
+              >
+                <p className="text-red-500">Por favor, preencha todos os campos obrigatórios.</p>
+              </motion.div>
+            )}
+            {showSuccessMessage && (
+              <motion.div
+                variants={fadeInMessage}
+                initial="initial"
+                whileInView="animate"
+                viewport={{
+                  once: true,
+                }}
+              >
+                <p className="text-green-500">Email enviado com sucesso!<br /> Em breve retornarei o seu contato :)</p>
+              </motion.div>
+            )}
+
+            {!showSuccessMessage && (
+              <button
+                type="submit"
+                className="mt-2 flex gap-3 p-5 items-center justify-center w-[14vw] bg-gradient-to-tr from-linear-l to-linear-r rounded-xl text-white"
+              >
+                <p>{t("message-button")}</p>
+                <Image src={send} alt={"send button"} />
+              </button>
+            )}
           </form>
         </div>
       </div>
@@ -247,6 +304,9 @@ const Contact = () => {
                 <label htmlFor="name">{t("name")}</label>
                 <input
                   key="name-input"
+                  value={name}
+                  minLength={2}
+                  maxLength={50}
                   placeholder={t("input-name")}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full bg-transparent border-2 border-stroke rounded-xl p-4 placeholder-details"
@@ -256,6 +316,9 @@ const Contact = () => {
                 <label htmlFor="email">Email</label>
                 <input
                   key="email-input"
+                  value={email}
+                  minLength={2}
+                  maxLength={50}
                   placeholder={t("input-email")}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-transparent border-2 border-stroke rounded-xl p-4 placeholder-details"
@@ -265,17 +328,48 @@ const Contact = () => {
                 <label htmlFor="message">{t("message")}</label>
                 <textarea
                   key="message-input"
+                  value={message}
+                  minLength={10}
+                  maxLength={240}
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-full bg-transparent border-2 border-stroke rounded-xl p-4 h-[26vh] placeholder-details text-start align-text-top"
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="mt-2 flex gap-3 p-5 items-center justify-center w-[14vw] bg-gradient-to-tr from-linear-l to-linear-r rounded-xl text-white"
-              >
-                <p>{t("message-button")}</p>
-                <Image src={send} alt={"send button"} />
-              </button>
+              {showError && (
+                <motion.div
+                  variants={fadeInMessage}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                >
+                  <p className="text-red-500">Por favor, preencha todos os campos obrigatórios.</p>
+                </motion.div>
+              )}
+              {showSuccessMessage && (
+                <motion.div
+                  variants={fadeInMessage}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{
+                    once: true,
+                  }}
+                >
+                  <p className="text-green-500">Email enviado com sucesso!<br /> Em breve retornarei o seu contato :)</p>
+                </motion.div>
+              )}
+
+              {!showSuccessMessage && (
+                <button
+                  type="submit"
+                  className="mt-2 flex gap-3 p-5 items-center justify-center w-[14vw] bg-gradient-to-tr from-linear-l to-linear-r rounded-xl text-white"
+                >
+                  <p>{t("message-button")}</p>
+                  <Image src={send} alt={"send button"} />
+                </button>
+              )}
+
             </form>
           </div>
         </div>
