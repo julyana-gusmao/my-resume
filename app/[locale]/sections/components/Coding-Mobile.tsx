@@ -1,9 +1,11 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 import { useState } from "react";
 import projects from '../../projects/projects.json';
 
 function CodingMobile() {
     const t = useTranslations('coding');
+    const locale: 'en' | 'pt' = useLocale() as 'en' | 'pt';
     const [filter, setFilter] = useState<'personal' | 'professional' | 'all'>("all");
     const handleFilterChange = (type: 'personal' | 'professional' | 'all') => {
         setFilter(type);
@@ -58,17 +60,21 @@ function CodingMobile() {
 
             <div id="PROJETOS" className="lg:hidden flex flex-col gap-5 h-full w-full items-center">
                 {filteredProjects.map(project => (
-                    <div key={project.id} className="personal flex flex-col justify-center text-left p-4 rounded-xl border-stroke border-2 border-opacity-50">
-                        <div id="IMAGE" className="w-full h-[25vh] bg-white rounded-2xl">
-                            {" "}
-                        </div>
-                        <div id="TEXT" className="flex flex-col gap-3 p-3">
-                            <h5 className="font-bold">{project.title}</h5>
-                            <p className="text-details ">
-                                {project.description}
-                            </p>
+                    <div key={project.id} className="personal w-[80vw] flex flex-col justify-center items-center text-left p-4 rounded-xl border-stroke border-2 border-opacity-50">
+                        <Image
+                            src={project.image}
+                            alt={`Project Image ${project.translations[locale as 'en' | 'pt'].title}`}
+                            width={250}
+                            height={400}
+                        />
+                        <div id="TEXT" className="flex flex-col w-full gap-3 p-3">
                             <p className="text-xs">#{project.type}</p>
-                            <p className="text-xs text-details">{project.url}</p>
+                            <h5 className="font-bold w-[65vw]">{project.translations[locale as 'en' | 'pt'].title}</h5>
+                            <p className="text-details "
+                            dangerouslySetInnerHTML={{ __html: project.translations[locale as 'en' | 'pt'].description }}
+                            />
+                            <a href={project.url} className="text-xs text-details break-words">{project.url}</a>
+                            <p className="text-sm text-details">{project.tags}</p>
                         </div>
                     </div>
                 ))}

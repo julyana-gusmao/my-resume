@@ -74,7 +74,8 @@ const Hero = () => {
               </span>
             </a>
           <a
-            href="#"
+            href="/Curriculo-Julyana-Gusmao.pdf"
+            download
             className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
           >
             <span className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
@@ -172,7 +173,8 @@ const Hero = () => {
               </span>
             </a>
             <a
-              href="#"
+              href="/Curriculo-Julyana-Gusmao.pdf"
+              download
               className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 lg:text-lg cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
             >
               <span className="block bg-main-color hover:bg-slate-800 rounded-full px-6 py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">

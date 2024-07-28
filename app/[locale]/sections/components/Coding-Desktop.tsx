@@ -68,7 +68,7 @@ function CodingDesktop() {
                     <div className='w-[60vw] relative' onClick={(e) => e.stopPropagation()}>
                         <div className='bg-white rounded-2xl h-full flex flex-col items-start justify-start gap-5 p-5'>
                             <div className='w-full h-full'>
-                                <video className='w-full h-full object-cover rounded-2xl' controls autoPlay>
+                                <video className='w-full max-h-[65vh] object-cover rounded-2xl' controls autoPlay>
                                     <source src={selectedProject.src} type='video/mp4' />
                                     Seu navegador não suporta a tag de vídeo.
                                 </video>
@@ -80,11 +80,7 @@ function CodingDesktop() {
                                     dangerouslySetInnerHTML={{ __html: selectedProject.translations[locale]['sub-description'] || '' }}
                                 />
                                 {selectedProject.url && (
-                                    <Link href={selectedProject.url} legacyBehavior>
-                                        <a className="text-xs text-gray-500" target="_blank" rel="noopener noreferrer">
-                                            {selectedProject.url}
-                                        </a>
-                                    </Link>
+                                    <p className="text-xs hover:text-pink-600 hover:scale-110 transition-transform duration-500 cursor-pointer">Ver prévia: {selectedProject.url}</p>
                                 )}
                             </div>
                             <button onClick={handleModalClose} className='bg-red-500 px-4 py-1 rounded-md text-white absolute bottom-5 right-5'>Fechar</button>
@@ -153,8 +149,8 @@ function CodingDesktop() {
                                 className="text-gray-400 text-sm font-sans"
                                 dangerouslySetInnerHTML={{ __html: project.translations[locale as 'en' | 'pt'].description }}
                             />
-                            <p className="text-xs">#{project.type}</p>
                             <p className="text-xs text-gray-500">{project.tags}</p>
+                            <p className="text-xs">#{project.type}</p>
                         </div>
                     </div>
                 ))}
