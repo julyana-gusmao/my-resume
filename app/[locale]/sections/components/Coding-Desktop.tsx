@@ -1,8 +1,7 @@
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
-import projectsData from '../../projects/projects.json';
+import projectsData from '../../../../json/projects/projects.json';
 
 type Project = {
     id: string;
@@ -80,11 +79,7 @@ function CodingDesktop() {
                                     dangerouslySetInnerHTML={{ __html: selectedProject.translations[locale]['sub-description'] || '' }}
                                 />
                                 {selectedProject.url && (
-                                    <Link href={selectedProject.url} legacyBehavior>
-                                        <a className="text-xs text-gray-500" target="_blank" rel="noopener noreferrer">
-                                            {selectedProject.url}
-                                        </a>
-                                    </Link>
+                                    <p className="text-xs hover:text-pink-600 hover:scale-110 transition-transform duration-500 cursor-pointer">Ver prévia: {selectedProject.url}</p>
                                 )}
                             </div>
                             <button onClick={handleModalClose} className='bg-red-500 px-4 py-1 rounded-md text-white absolute bottom-5 right-5'>Fechar</button>
@@ -153,8 +148,8 @@ function CodingDesktop() {
                                 className="text-gray-400 text-sm font-sans"
                                 dangerouslySetInnerHTML={{ __html: project.translations[locale as 'en' | 'pt'].description }}
                             />
-                            <p className="text-xs">#{project.type}</p>
                             <p className="text-xs text-gray-500">{project.tags}</p>
+                            <p className="text-xs">#{project.type}</p>
                         </div>
                     </div>
                 ))}

@@ -46,7 +46,7 @@ const AboutMe = () => {
               </span>
             </a>
             <a
-              href="#"
+              href="/curriculo.pdf"
               className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 text-base cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
             >
               <span className="block bg-main-color hover:bg-slate-800 rounded-full py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">
@@ -102,7 +102,7 @@ const AboutMe = () => {
               </span>
             </a>
             <a
-              href="#"
+              href="/curriculo.pdf"
               className="px-1 inline-block py-1 w-full rounded-full bg-gradient-to-br from-linear-l to-linear-r hover:bg-slate-800 mt-3 text-sm cursor-pointer transition-all duration-100 ease-in transform hover:scale-105"
             >
               <span className="block bg-main-color hover:bg-slate-800 rounded-full py-2 cursor-pointer transition-all duration-100 ease-in transform hover:scale-100">

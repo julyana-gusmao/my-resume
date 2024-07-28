@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "translations": {
+            "en": {
+                "title": "Site - Syno Digital Company",
+                "description": "Website for the company I am part of. It was a great pleasure for me to be responsible for the creation of the company's website. Made with <b>React, it has mobile responsiveness and animations!</b>",
+                "sub-description": "Created with React JS, customized with TailwindCSS and animated with Framer Motion.</em> It has settings like smooth scroll, and it's possible to send a contact form without an API. Use of various libraries to improve user experience."
+            },
+            "pt": {
+                "title": "Site - Syno Companhia Digital",
+                "description": "Website para a empresa que faço parte. Para mim, foi um grande prazer ser responsável pela criação do website da empresa. Foi feito com <b>React, tem responsividade mobile e animações!</b>",
+                "sub-description": "<em>Criado com React JS, personalizado com TailwindCSS e animado com Framer Motion.</em> Possui configurações como scroll smooth, e é possível enviar um formulário de contato sem precisar de API. Uso de várias bibliotecas para melhorar a experiência do usuário."
+            }
+        },
+        "url": "https://site-syno.vercel.app",
+        "src": "/videos/syno.mp4",
+        "image": "/assets/thumbs/syno-thumb.png",
+        "type": "professional",
+        "tags": "#front-end #responsivo #react #tailwind #framermotion"
+    },
+    {
+        "id": "2",
+        "translations": {
+            "en": {
+                "title": "Plann.er - Travel Planner With Friends",
+                "description": "CRUD: A travel planner to book your next destination with your friends! You can set a date, invite emails and add activities for each day of the trip. <em>Made with Vite, Docker, Prisma, Typescript</em>",
+                "sub-description": "The Planner has a minimalist design, produced with TailwindCSS. Its main functions are <em>Add a travel destination, choose dates, invite friends, add activities to each day of the trip.</em>"
+            },
+            "pt": {
+                "title": "Plann.er - Planejador de Viagens em Grupo",
+                "description": "CRUD: Um planejador de viagens para marcar o próximo destino com seus amigos! É possível marcar uma data, convidar emails e adicionar as atividades para cada dia da viagem. <em>Feito com Vite, Docker, Prisma, Typescript</em>",
+                "sub-description": "O Planner possui um designer minimalista, produzido com TailwindCSS. Suas principais funções são <em>Adicionar um destino de viagem, escolher as datas, convidar amigos, adicionar atividades a cada dia da viagem.</em>"
+            }
+        },
+        "src": "/videos/planner.mp4",
+        "image": "/assets/thumbs/planner-thumb.png",
+        "type": "personal",
+        "tags": "#fullstack #API #CRUD #validations #vite #docker",
+        "github": "https://github.com/julyana-gusmao/plann.er"
+    },
+    {
+        "id": "3",
+        "translations": {
+            "en": {
+                "title": "To Do List",
+                "description": "CRUD: A simple, responsive and very cute to-do list. The focus of this project was to create something functional for me to use in my daily life, with a comfortable look that I liked. It uses Prisma, PostgreSQL, Docker, and its design is made with Pure CSS classes",
+                "sub-description": "The objective was to make a to-do list that I could use in my daily life, on any of my devices, and look like me! I made a really cute design, to brighten up my daily life.<em>Do it state validations, conditionals, and consumes the API created by me.</em>"
+            },
+            "pt": {
+                "title": "To Do List",
+                "description": "CRUD: Uma lista de tarefa simples, responsiva e bem bonitinha. O foco desse projeto era criar algo funcional para eu usar no meu dia a dia, com um visual confortável e que me agradasse. Utiliza Prisma, PostgreSQL, Docker, e seu design é feito com classes de CSS Puro",
+                "sub-description": "O objetivo foi fazer uma lista de tarefas que eu pudesse usar no meu dia a dia, em qualquer um dos meus dispositivos, e tivesse a minha cara! Fiz um design bem fofinho, para alegrar o meu dia a dia. <em>Faz validações de estado, condicionais, e consome a API criada por mim.</em>"
+            }
+        },
+        "src": "/videos/todolist.mp4",
+        "image": "/assets/thumbs/todolist-thumb.png",
+        "type": "personal",
+        "tags": "#fullstack #CRUD #Estados #Validações #CSSPure",
+        "github": "https://github.com/julyana-gusmao/todolist"
+    }
+]
